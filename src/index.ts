@@ -3,7 +3,7 @@ import { config } from "dotenv";
 
 config();
 
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 6069;
 
 app.listen(port, () =>
   console.log(`Servidor rodando: http://localhost:${port}`)
