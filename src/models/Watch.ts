@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
-  name: {
+  model: {
     type: String,
     required: true,
   },
@@ -11,6 +11,26 @@ const schema = new mongoose.Schema({
   },
   price: {
     type: Number,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  box: {
+    type: String,
+    required: true,
+  },
+  bracelet: {
+    type: String,
+    required: true,
+  },
+  identifier: {
+    type: String,
     required: true,
   },
 });
