@@ -1,9 +1,8 @@
 import express from "express";
+import watchController from "./controllers/watchController";
 
 const router = express.Router();
 
-router.get("/watch", (req, res) => {
-  res.send("Rélogios");
-});
+router.get("/watch", watchController.index);
 
 export default router;
