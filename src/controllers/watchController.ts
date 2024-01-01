@@ -3,9 +3,9 @@ import Watch from "../models/Watch";
 
 async function index(req: express.Request, res: express.Response) {
   try {
-    const watchs = await Watch.find();
+    const watches = await Watch.find();
 
-    return res.status(200).json(watchs);
+    return res.status(200).json(watches);
   } catch (err) {
     console.error(err);
 
@@ -13,4 +13,18 @@ async function index(req: express.Request, res: express.Response) {
   }
 }
 
-export default { index };
+async function limit(req: express.Request, res: express.Response) {
+  try {
+    const { number } = req.params;
+
+    const watches = await Watch.find().limit(+number);
+
+    return res.status(200).json(watches);
+  } catch (err) {
+    console.error(err);
+
+    return res.status(500).json({ error: "Internal server error" });
+  }
+}
+
+export default { index, limit };
