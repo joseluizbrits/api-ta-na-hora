@@ -29,7 +29,7 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  identifier: {
+  desc: {
     type: String,
     required: true,
   },

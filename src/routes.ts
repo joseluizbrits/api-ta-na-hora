@@ -3,7 +3,7 @@ import watchController from "./controllers/watchController";
 
 const router = express.Router();
 
-router.get("/watch", watchController.index);
-router.get("/watch/:number", watchController.limit);
+router.get("/watches", watchController.index);
+router.get("/watches/:number", watchController.limit);
 
 export default router;
