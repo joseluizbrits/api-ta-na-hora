@@ -13,11 +13,11 @@ async function index(req: express.Request, res: express.Response) {
   }
 }
 
-async function limit(req: express.Request, res: express.Response) {
+async function one(req: express.Request, res: express.Response) {
   try {
-    const { number } = req.params;
+    const { id } = req.params;
 
-    const watches = await Watch.find().limit(+number);
+    const watches = await Watch.findOne({ _id: id });
 
     return res.status(200).json(watches);
   } catch (err) {
@@ -27,4 +27,4 @@ async function limit(req: express.Request, res: express.Response) {
   }
 }
 
-export default { index, limit };
+export default { index, one };
