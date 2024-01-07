@@ -1,11 +1,12 @@
 import express from "express";
 import Watch from "../models/Watch";
+import shuffle from "../utils/shuffle";
 
 async function index(req: express.Request, res: express.Response) {
   try {
     const watches = await Watch.find();
 
-    return res.status(200).json(watches);
+    return res.status(200).json(shuffle(watches));
   } catch (err) {
     console.error(err);
 
