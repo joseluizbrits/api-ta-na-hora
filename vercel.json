@@ -2,7 +2,6 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "use": "@vercel/node",
       "destination": "/api/"
     },
     {
