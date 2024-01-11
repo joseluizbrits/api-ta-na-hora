@@ -9,6 +9,7 @@
   "routes": [
     {
       "src": "(.*)",
+      "public": "(.*)",
       "dest": "src/index.ts"
     }
   ]
